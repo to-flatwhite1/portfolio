@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<title>산책어때</title>
+		<link href="index.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id=login>
+			<ul>
+				<li>마이페이지</li>
+				<li>로그인</li>
+			</ul>
+		</div>
+		<div id=wrap>
+			<div id="logo">
+				<h1>산책 어때</h1>
+			</div>
+			<main>
+				<div class="box-container">
+					<div class="box-item">
+						<h2>산책 하고 싶은 강아지</h2>
+						<a href="#"><img src="images/image1.png"></a>
+						
+					</div>
+					<div class="box-item">
+					<h2>산책 시키고 싶은 사람</h2>
+					<img src="images/image2.png"></div>
+				</div>
+			</main>
+		<footer>
+			<div id="bottomMenu">
+				<ul type="none">
+					<li><a href="#">회사소개</a></li>
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">약관</a></li>
+					<li><a href="#">사이트맵</a></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+	
+	<script>
+	let lis=document.getElementsByTagName("li"); 
+	lis[0].addEventListener("click",function(){
+		location.href="mypage.jsp?"
+	})
+	lis[1].addEventListener("click",function(){
+		location.href="login.jsp?"
+	})
+	</script>
+	</body>
+</html>

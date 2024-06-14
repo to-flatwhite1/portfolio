@@ -1,0 +1,8 @@
+1716876143384	Rename resource 'sql.jsp'
+1716957294066	Rename resource 'register.jsp'
+1716972809326	Delete element
+1716972831662	Rename resource 'next.jsp'
+1716972856807	Rename resource 'next2.jsp'
+1716972872493	Delete element
+1717055214387	Move 'next2.jsp' to 'webapp'
+1717055398985	Move 'mysql-connector-j-8.0.33.jar' to 'lib'
