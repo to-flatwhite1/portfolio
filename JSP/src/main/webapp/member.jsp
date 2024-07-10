@@ -7,6 +7,12 @@
 	<head>
 		<meta charset="utf-8">
 		<title>회원 가입 내역 확인</title>
+		<style>
+		table,tr,th,td{
+			border-collapse:collapse;
+			border:1px solid black;
+		}
+		</style>
 	</head>
 	<body>
 		<%

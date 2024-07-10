@@ -1,0 +1,86 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>회원가입 페이지 입니다.</title>
+	</head>
+	<body>
+	<div id="wrap">
+		<h1>회원가입</h1>
+		<form method="get" action="idCheck.do" name="frm">
+			아이디:<input type="text" name="userid" value="${userid }">
+			<input type="submit" value="중복확인!">
+			<br>
+			<c:if test="${result==1 }">
+				${userid }는 이미 사용중인 아이디입니다.
+			</c:if>
+			<c:if test="${result==-1 }">
+				${userid }는 사용가능합니다.
+				<input type="button" value="사용하기" onclick="idok()">
+			</c:if>
+		</form>
+		<form method="post" action="join.do" name="frm">
+			<table>
+				<tr>
+					<td>이름</td>
+					<td><input type="text" name="nm"></td>
+				</tr>
+				<tr>
+					<td>아이디</td>
+					<td>
+						<input type="text" name="user_id">*
+						<input type="hidden" name="reId">
+						<input type="button" value="중복확인" onclick="idCheck()">	
+					</td>
+					
+				</tr>
+				<tr>
+					<td>비밀번호</td>
+					<td><input type="password" name="user_pw"></td>
+				</tr>
+				<tr>
+					<td>비밀번호 확인</td>
+					<td><input type="password" name="pwd_check">*</td>
+				</tr>
+				<tr>
+					<td>이메일</td>
+					<td><input type="text" name="email"></td>
+				</tr>
+				<tr>
+					<td>연락처</td>
+					<td><input type="text" name="phone"></td>
+				</tr>
+				<tr>
+					<td>등급</td>
+					<td>
+						<input type="radio" name="admin" value="1">관리자<br>
+						<input type="radio" name="admin" value="0" checked>일반회원
+					</td>
+				</tr>
+				<tr>
+					<td>입력</td>
+					<td>
+						<input type="submit" value="회원가입">
+						<input type="reset" value="초기화">
+					</td>
+				</tr>
+			</table>
+		</form>	
+	</div>		
+		
+		<script>
+			function idCheck(){
+				if(document.frm.user_id.value==""){
+					alert("아이디를 입력하셔야 중복확인이 가능합니다.");
+					document.frm.user_id.focus();
+				}
+				var url="idCheck.do?user_id="+document.frm.userId.value;	//get통신 경로
+				var popupX=(window.screen.width/2) - (450/2);	//기준좌표에서 X방향으로 화면이 등장하는 위치
+				var popupY=(window.screen.height/2) - (200/2);	//기준좌표에서 Y방향으로 화면이 등장하는 위치
+				window.open(url, "_blank_1", "toolbar=no, menubar=no, width=450, height=200, left="+popupX+", top="+popupY);
+			}
+		</script>
+	</body>
+</html>
